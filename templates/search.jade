@@ -1,0 +1,22 @@
+- get_header();
+section.main
+	- if ( have_posts() ) :
+		header
+			h1
+				- printf( __( 'Search Results for: %s', 'blankslate' ), get_search_query() );
+	- while ( have_posts() ) : the_post();
+	- get_template_part( 'entry' );
+	- endwhile;
+	- get_template_part( 'nav', 'below' );
+	- else:
+	article(id="post-0", class="post no-results not-found")
+		header
+			h2
+				- _e( 'Nothing Found', 'blankslate' );
+		section.entry.content
+			p
+				- _e( 'Sorry, nothing matched your search. Please try again.', 'blankslate' );
+			- get_search_form();
+	- endif;
+- get_sidebar();
+- get_footer();
