@@ -1,0 +1,23 @@
+{
+  "name": "template",
+  "version": "0.0.1",
+  "description": "IMPORTANT - PLEASE READ: http://tidythemes.com/concept/",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aaron John Schlosser",
+  "license": "GPL2",
+  "devDependencies": {
+    "gulp": "^3.8.6",
+    "gulp-compass": "^1.1.9",
+    "gulp-concat": "^2.3.4",
+    "gulp-imagemin": "^0.6.2",
+    "gulp-jade-php": "^1.0.0",
+    "gulp-minify-css": "^0.3.7",
+    "gulp-uglify": "^0.3.1",
+    "gulp-util": "^3.0.0",
+    "gulp-watch": "^0.6.9",
+    "jade": "^1.5.0"
+  }
+}

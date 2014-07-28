@@ -1,0 +1,12 @@
+- get_header();
+section(role="main")
+	header
+		h1
+			- if ( is_day() ) { printf( __( 'Daily Archives: %s', 'template' ), get_the_time( get_option( 'date_format' ) ) ); }
+			- elseif ( is_month() ) { printf( __( 'Monthly Archives: %s', 'template' ), get_the_time( 'F Y' ) ); }
+			- elseif ( is_year() ) { printf( __( 'Yearly Archives: %s', 'template' ), get_the_time( 'Y' ) ); }
+			- else { _e( 'Archives', 'template' ); }
+	- if ( have_posts() ) : while ( have_posts() ) : the_post();
+	- get_template_part( 'entry' );
+	- endwhile; endif;
+- get_footer();

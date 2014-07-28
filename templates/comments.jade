@@ -1,0 +1,32 @@
+section.comments
+	section.comments-list
+		- if ( 'comments.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) ) return;
+		- if ( have_comments() ) : 
+		- global $comments_by_type;
+		- $comments_by_type = &separate_comments( $comments );
+		- if ( ! empty( $comments_by_type['comment'] ) ) :
+			h3
+				- comments_number();
+			- if ( get_comment_pages_count() > 1 ) :
+				nav(role="navigation").comments-navigation.above
+					div
+						- paginate_comments_links();
+			- endif;
+			ul
+				- wp_list_comments( 'type=comment' );
+			- if ( get_comment_pages_count() > 1 ) :
+				nav(role="navigation").comments-navigation.below
+					div
+						- paginate_comments_links();
+			- endif;
+		- endif;
+	- if ( ! empty( $comments_by_type['pings'] ) ) : 
+	- $ping_count = count( $comments_by_type['pings'] );
+	section.trackbacks-list
+		h3
+			- echo '<span class="ping-count">' . $ping_count . '</span> ' . ( $ping_count > 1 ? __( 'Trackbacks', 'template' ) : __( 'Trackback', 'template' ) );
+		ul
+			- wp_list_comments( 'type=pings&callback=blankslate_custom_pings' );
+	- endif;
+	- endif;
+	- if ( comments_open() ) comment_form();

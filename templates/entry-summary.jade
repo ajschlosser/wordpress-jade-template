@@ -1,0 +1,6 @@
+section.entry-summary
+	- the_excerpt();
+	- if( is_search() ) :
+	div.entry-links
+		- wp_link_pages();
+	- endif;

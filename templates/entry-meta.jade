@@ -1,0 +1,7 @@
+section.entry-meta
+	span.author.vcard
+		- the_author_posts_link();
+	span.meta-separator.
+		 | 
+	span.entry-date
+		- the_time( get_option( 'date_format' ) );

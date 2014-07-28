@@ -1,0 +1,15 @@
+doctype html
+| <html <?php language_attributes(); ?>>
+head
+	meta(charset!="<?php bloginfo('charset'); ?>")
+	meta(name="viewport" content="width=device-width")
+	title
+		- wp_title( " | ", true, "right" );
+	- wp_head();
+| <body <?php body_class(); ?>>
+header(role="banner")
+	h1
+		- wp_title();
+	nav(role="navigation")
+		- wp_nav_menu();
+hr
