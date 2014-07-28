@@ -1,0 +1,17 @@
+- get_header();
+section(role="main").entry
+	- if ( have_posts() ) : while ( have_posts() ) : the_post();
+		article(id!="post-<?php the_ID(); ?>" class!="<?php post_class(); ?>")
+			header.header
+				h1
+					- the_title();
+				- edit_post_link();
+			section.content
+				- if ( has_post_thumbnail() ) { the_post_thumbnail(); }
+				- the_content();
+				div.links
+					- wp_link_pages();
+	- if ( ! post_password_required() ) comments_template( '', true );
+	- endwhile; endif;
+- get_sidebar();
+- get_footer();
