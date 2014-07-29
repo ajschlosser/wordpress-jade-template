@@ -1,0 +1,11 @@
+- get_header();
+section(role="main")
+	header
+		h1
+			- _e( 'Tag Archives: ', 'blankslate' ); single_tag_title();
+	- if ( have_posts() ) : while ( have_posts() ) : the_post();
+	- get_template_part( 'entry' );
+	- endwhile; endif;
+	- get_template_part( 'nav', 'below' );
+- get_sidebar();
+- get_footer();

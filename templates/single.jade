@@ -1,6 +1,10 @@
-aside(id="sidebar", role="complementary")
-	- if ( is_active_sidebar( 'primary-widget-area' ) ) :
-		div(id="primary", class="widget-area")
-			ul.xoxo
-				- dynamic_sidebar( 'primary-widget-area' );
-	- endif;
+- get_header();
+section(role="main")
+	- if ( have_posts() ) : while ( have_posts() ) : the_post();
+	- get_template_part( 'entry' ); 
+	- if ( ! post_password_required() ) comments_template( '', true );
+	- endwhile; endif;
+	footer
+		- get_template_part( 'nav', 'below-single' );
+- get_sidebar();
+- get_footer();
