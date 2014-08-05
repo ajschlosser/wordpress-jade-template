@@ -13,6 +13,7 @@ var gulp 				= require("gulp"),
 	compass 			= require("gulp-compass"),
 	jade 				= require("gulp-jade-php"),
 	minifyCSS 			= require("gulp-minify-css"),
+	plumber				= require("gulp-plumber"),
 	imagemin 			= require("gulp-imagemin");
 
 var paths = {
@@ -37,35 +38,43 @@ var paths = {
 
 gulp.task("scripts", function() {
   return gulp.src(paths.scripts.src)
+  	.pipe(plumber())
 	.pipe(uglify())
 	.pipe(concat(paths.scripts.con))
+	.pipe(plumber.stop())
 	.pipe(gulp.dest(paths.scripts.dest))
 });
 
 gulp.task("styles", function() {
   return gulp.src(paths.styles.src)
+  .pipe(plumber())
   .pipe(compass({
 	css: "./stylesheets",
 	sass: "./sass",
 	image: "./images"
   }))
   .pipe(minifyCSS())
+  .pipe(plumber.stop())
   .pipe(gulp.dest(paths.styles.dest));
 });
 
 gulp.task("templates", function() {
   gulp.src("./templates/**/*.jade")
+  	.pipe(plumber())
 	.pipe(jade({
 		locals: {
 		  title: "OMG THIS IS THE TITLE"
 		}
 	 }))
-	 .pipe(gulp.dest("./"));
+	.pipe(plumber.stop())		
+	.pipe(gulp.dest("./"));
 });
 
 gulp.task("imagemin", function () {
 	return gulp.src("./images/*.*")
+		.pipe(plumber())
 		.pipe(imagemin())
+		.pipe(plumber.stop())
 		.pipe(gulp.dest("./images"));
 });
 
