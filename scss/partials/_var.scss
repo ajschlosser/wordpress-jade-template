@@ -1,0 +1,137 @@
+// PATH VARS
+$images: "../images/";
+
+// COLOR VARS
+//
+
+// FONT VARS AND MIXINS
+//
+
+// DIMENSION VARS
+$desktop: 1000px;
+$fixed: 1000px;
+$phone: 475px;
+
+// MEDIA MIXINS
+@mixin desktop() {
+	@media (min-width: $desktop) {
+		@content;
+	}
+}
+@mixin before ($p) {
+	@media (max-width: $p) {
+		@content;
+	}
+}
+@mixin beyond ($p) {
+	@media (min-width: $p) {
+		@content;
+	}
+}
+@mixin within ($min, $max) {
+	@media (min-width: $min) and (max-width: $max) {
+		@content;
+	}	
+}
+
+// SPRITE MIXINS
+@mixin sprited($s) {
+	@include sprite-sprite($s);
+}
+@mixin fitted-sprite($s, $m:$sprite-sprites) {
+    $i: sprite-file($m, $s);
+    $sm: sprite-url($m);
+    $p: sprite-position($m, $s);
+    width: image-width($i);
+    height: image-height($i);
+	background: $sm $p no-repeat;
+}
+@mixin bg-img($i) {
+	background: url($images + $i) top/cover white no-repeat;
+}
+@mixin resize-sprite($sprite, $percent, $m:$sprite-sprites) {
+	$spritePath:    sprite-path($m);
+	$spriteWidth:   image-width($spritePath);
+	$spriteHeight:  image-height($spritePath);
+	$width: image-width(sprite-file($m, $sprite));
+	$height: image-height(sprite-file($m, $sprite));
+
+	@include background-size(ceil($spriteWidth * ($percent/100)) ceil($spriteHeight * ($percent/100)));
+	width: ceil($width*($percent/100));
+	height: ceil($height*($percent/100));
+	background-position: 0 floor(nth(sprite-position($m, $sprite), 2)  * ($percent/100) );
+}
+
+// UTILITY MIXINS
+@mixin center-margins() {
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}
+@mixin reset-margins() {
+	left: inherit;
+	right: inherit;
+	margin: inherit;
+}
+@mixin shrink() {
+	margin: 0;
+	padding: 0;
+}
+@mixin placeholder {
+  &.placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}
+
+// UTILITY CLASSES
+.mobile-only {
+	display: block;
+	@include desktop {
+		display: none;
+	}
+}
+.mobile-block {
+	display: block!important;
+	@include desktop {
+		display: inline-block!important;
+	}
+}
+.no-mobile {
+	display: none;
+	@include desktop {
+		display: block;
+	}
+}
+.no-mobile-inline-block {
+	display: none;
+	@include desktop {
+		display: inline-block;
+	}
+}
+.shrunk {
+	padding: 0;
+	margin: 0;
+}
+.centered-margins {
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}
+.fixed-width {
+	width: $fixed;
+	@include before($fixed) {
+		width: 100%;
+	}
+}
+.fixed-width-centered {
+	width: $fixed;
+	@include center-margins;
+	@include before($fixed) {
+		width: 100%;
+	}
+}
+.left-justify { text-align: left; }
+
+
+

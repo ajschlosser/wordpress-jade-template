@@ -15,7 +15,7 @@ var gulp 				= require("gulp"),
 
 var paths = {
 	styles: {
-		src: "./sass/**/*.scss",
+		src: "./scss/**/*.scss",
 		dest: "./stylesheets"
 	},
 	templates: {
@@ -29,7 +29,7 @@ gulp.task("styles", function() {
 		.pipe(plumber())
 		.pipe(compass({
 			css: "./stylesheets",
-			sass: "./sass",
+			sass: "./scss",
 			image: "./images"
 		}))
 		.pipe(plumber.stop())
