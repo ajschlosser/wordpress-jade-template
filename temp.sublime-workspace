@@ -442,7 +442,7 @@
 			"file": "package.json",
 			"settings":
 			{
-				"buffer_size": 499,
+				"buffer_size": 584,
 				"line_ending": "Unix"
 			}
 		},
@@ -450,9 +450,41 @@
 			"file": ".gitignore",
 			"settings":
 			{
-				"buffer_size": 39,
+				"buffer_size": 51,
 				"line_ending": "Unix",
 				"name": "node_modules"
+			}
+		},
+		{
+			"file": "config.rb",
+			"settings":
+			{
+				"buffer_size": 903,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "bower.json",
+			"settings":
+			{
+				"buffer_size": 180,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scss/app.scss",
+			"settings":
+			{
+				"buffer_size": 1680,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scss/partials/_var.scss",
+			"settings":
+			{
+				"buffer_size": 2449,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -1002,8 +1034,8 @@
 						"selection":
 						[
 							[
-								197,
-								197
+								938,
+								938
 							]
 						],
 						"settings":
@@ -1025,15 +1057,15 @@
 					"file": "package.json",
 					"settings":
 					{
-						"buffer_size": 499,
+						"buffer_size": 584,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								416,
-								416
+								381,
+								381
 							]
 						],
 						"settings":
@@ -1056,15 +1088,15 @@
 					"file": ".gitignore",
 					"settings":
 					{
-						"buffer_size": 39,
+						"buffer_size": 51,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								39,
-								39
+								51,
+								51
 							]
 						],
 						"settings":
@@ -1075,6 +1107,119 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "config.rb",
+					"settings":
+					{
+						"buffer_size": 903,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								801,
+								801
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "bower.json",
+					"settings":
+					{
+						"buffer_size": 180,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								180,
+								180
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "scss/app.scss",
+					"settings":
+					{
+						"buffer_size": 1680,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								903,
+								903
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "scss/partials/_var.scss",
+					"settings":
+					{
+						"buffer_size": 2449,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2291,
+								2291
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 71.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

@@ -1,0 +1,13 @@
+- get_header();
+- get_template_part( "" );
+section(role="main").content
+	- if ( have_posts() ) :
+	- while ( have_posts() ) :
+	- the_post();
+	- $more; $more = FALSE;
+	.content.fixed-width-centered
+		- if ($content = get_the_content("Read More", true)) echo $content;
+	- endwhile;
+	- endif;
+- get_template_part( "" );
+- get_footer();

@@ -3,15 +3,25 @@ section(role="main").entry
 	- if ( have_posts() ) : while ( have_posts() ) : the_post();
 		article(id!="post-<?php the_ID(); ?>" class!="<?php post_class(); ?>")
 			header.header
-				h1
-					- the_title();
-				- edit_post_link();
+				.row
+					.large-12.columns
+						h1
+							- the_title();
 			section.content
-				- if ( has_post_thumbnail() ) { the_post_thumbnail(); }
-				- the_content();
-				div.links
-					- wp_link_pages();
-	- if ( ! post_password_required() ) comments_template( '', true );
+				- if (is_page("")) {
+					.some-container
+						.row
+							.large-6.columns
+							.large-6.columns
+				- } else {
+					.article-container
+						.row
+							.large-3.columns.nav
+								- get_template_part("sidenav");
+							.large-9.columns.art.left-justify
+								- the_content();
+				- }
 	- endwhile; endif;
+- get_template_part("");
 - get_sidebar();
 - get_footer();
