@@ -6,7 +6,7 @@ This theme is aimed at web professionials, but is of course available for anyone
 
 The bare essentials of a WordPress theme, no CSS styles added. Perfect for those who would like to build their own theme from scratch. One custom menu and one widgetized sidebar to get you started.
 
-Based on the BlankSlate theme by TidyThemes, Blank Gulp/Jade/Compass/Sass Template provides built-in support for building sites with Gulp, Jade, Compass, and Sass. Before using this theme, run 'npm install' in the theme's directory in order to install the gulpfile's dependencies. (See package.json for details.)
+Based on the BlankSlate theme by TidyThemes, Blank Gulp/Jade/Compass/Sass Template provides built-in support for building sites with Gulp, Jade, Compass, and Sass. It also comes pre-packaged with support for Zurb Foundation. For an identical seed project that uses Bootstrap instead, [see here](http://www.github.com/ajschlosser/wordpress-jade-bootstrap-template).
 
 ### Installation
 
