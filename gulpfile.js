@@ -7,7 +7,6 @@
 
 var gulp 				= require("gulp"),
 	gutil 				= require("gulp-util"),
-	concat				= require("gulp-concat"),
 	watch 				= require("gulp-watch"),
 	compass 			= require("gulp-compass"),
 	jade 				= require("gulp-jade-php"),
@@ -24,6 +23,11 @@ var paths = {
 	}
 };
 
+function handleError(err) {
+  console.log(err.toString());
+  this.emit('end');
+}
+
 gulp.task("styles", function() {
 	return gulp.src(paths.styles.src)
 		.pipe(plumber())
@@ -32,6 +36,7 @@ gulp.task("styles", function() {
 			sass: "./scss",
 			image: "./images"
 		}))
+		.on('error', handleError)
 		.pipe(plumber.stop())
 		.pipe(gulp.dest(paths.styles.dest));
 });

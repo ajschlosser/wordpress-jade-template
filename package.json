@@ -3,15 +3,13 @@
   "version": "0.0.2",
   "description": "A template for WordPress ready to use with Jade, Gulp and Compass",
   "main": "gulpfile.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "repository": "http://www.github.com/ajschlosser/wordpress-jade-template.git",
   "author": "Aaron John Schlosser",
   "license": "GPL2",
   "devDependencies": {
+    "bower": "^1.3.12",
     "gulp": "^3.8.6",
     "gulp-compass": "^1.1.9",
-    "gulp-concat": "^2.3.4",
     "gulp-jade-php": "^1.0.0",
     "gulp-plumber": "^0.6.5",
     "gulp-util": "^3.0.0",
