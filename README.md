@@ -8,6 +8,8 @@ The bare essentials of a WordPress theme, no CSS styles added. Perfect for those
 
 Based on the BlankSlate theme by TidyThemes, Blank Gulp/Jade/Compass/Sass Template provides built-in support for building sites with Gulp, Jade, Compass, and Sass. Before using this theme, run 'npm install' in the theme's directory in order to install the gulpfile's dependencies. (See package.json for details.)
 
+This setup supports Zurb Foundation. For a Boostrap version, see https://github.com/ajschlosser/wordpress-jade-bootstrap-template
+
 ## License
 
 GNU General Public License  | http://www.gnu.org/licenses/gpl.html
