@@ -18,7 +18,7 @@ var paths = {
 		dest: "./stylesheets"
 	},
 	templates: {
-		src: "./templates/**/*.jade",
+		src: "./templates/*.jade",
 		dest: "./"
 	}
 };
@@ -42,11 +42,11 @@ gulp.task("styles", function() {
 });
 
 gulp.task("templates", function() {
-  gulp.src("./templates/**/*.jade")
+  gulp.src(paths.templates.src)
   	.pipe(plumber())
 	.pipe(jade())
 	.pipe(plumber.stop())		
-	.pipe(gulp.dest("./"));
+	.pipe(gulp.dest(paths.tempaltes.dest));
 });
 
 gulp.task("default", function() {
