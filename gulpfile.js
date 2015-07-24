@@ -5,21 +5,21 @@
 * url: http://www.aaronschlosser.com
 */
 
-var gulp 				= require("gulp"),
-	gutil 				= require("gulp-util"),
-	watch 				= require("gulp-watch"),
-	compass 			= require("gulp-compass"),
-	jade 				= require("gulp-jade-php"),
-	plumber				= require("gulp-plumber")
+var gulp 				= require('gulp'),
+	gutil 				= require('gulp-util'),
+	watch 				= require('gulp-watch'),
+	compass 			= require('gulp-compass'),
+	jade 				= require('gulp-jade-php'),
+	plumber				= require('gulp-plumber')
 
 var paths = {
 	styles: {
-		src: "./scss/**/*.scss",
-		dest: "./stylesheets"
+		src: './scss/**/*.scss',
+		dest: './stylesheets'
 	},
 	templates: {
-		src: "./templates/*.jade",
-		dest: "./"
+		src: './templates/*.jade',
+		dest: './'
 	}
 };
 
@@ -28,28 +28,28 @@ function handleError(err) {
   this.emit('end');
 }
 
-gulp.task("styles", function() {
+gulp.task('styles', function() {
 	return gulp.src(paths.styles.src)
 		.pipe(plumber())
 		.pipe(compass({
-			css: "./stylesheets",
-			sass: "./scss",
-			image: "./images"
+			css: './stylesheets',
+			sass: './scss',
+			image: './images'
 		}))
 		.on('error', handleError)
 		.pipe(plumber.stop())
 		.pipe(gulp.dest(paths.styles.dest));
 });
 
-gulp.task("templates", function() {
+gulp.task('templates', function() {
   gulp.src(paths.templates.src)
   	.pipe(plumber())
 	.pipe(jade())
 	.pipe(plumber.stop())		
-	.pipe(gulp.dest(paths.tempaltes.dest));
+	.pipe(gulp.dest(paths.templates.dest));
 });
 
-gulp.task("default", function() {
-	gulp.watch(paths.styles.src, ["styles"]);
-	gulp.watch(paths.templates.src, ["templates"]);
+gulp.task('default', function() {
+	gulp.watch(paths.styles.src, ['styles']);
+	gulp.watch(paths.templates.src, ['templates']);
 });
