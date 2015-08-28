@@ -5,12 +5,12 @@
 * url: http://www.aaronschlosser.com
 */
 
-var gulp 				= require('gulp'),
-	gutil 				= require('gulp-util'),
-	watch 				= require('gulp-watch'),
-	compass 			= require('gulp-compass'),
-	jade 				= require('gulp-jade-php'),
-	plumber				= require('gulp-plumber')
+var gulp				= require('gulp'),
+	gutil				= require('gulp-util'),
+	watch				= require('gulp-watch'),
+	compass				= require('gulp-compass'),
+	jade				= require('gulp-jade-php'),
+	plumber				= require('gulp-plumber');
 
 var paths = {
 	styles: {
@@ -42,11 +42,13 @@ gulp.task('styles', function() {
 });
 
 gulp.task('templates', function() {
-  gulp.src(paths.templates.src)
-  	.pipe(plumber())
-	.pipe(jade())
-	.pipe(plumber.stop())		
-	.pipe(gulp.dest(paths.templates.dest));
+	gulp.src(paths.templates.src)
+		.pipe(plumber())
+		.pipe(jade({
+			pretty: '\t'	// Set to false to minify/uglify the PHP
+		}))
+		.pipe(plumber.stop())
+		.pipe(gulp.dest(paths.templates.dest));
 });
 
 gulp.task('default', function() {
