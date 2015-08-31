@@ -2,7 +2,8 @@
 * Base Gulp.js workflow
 * for simple front-end projects
 * author: Aaron John Schlosser
-* url: http://www.aaronschlosser.com
+* homepage: http://www.aaronschlosser.com
+* github: http://www.github.com/ajschlosser
 */
 
 var gulp				= require('gulp'),
@@ -24,8 +25,8 @@ var paths = {
 };
 
 function handleError(err) {
-  console.log(err.toString());
-  this.emit('end');
+	console.log(err.toString());
+	this.emit('end');
 }
 
 gulp.task('styles', function() {
