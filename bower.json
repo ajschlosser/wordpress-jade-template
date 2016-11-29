@@ -1,6 +1,6 @@
 {
-  "name": "Blank-Gulp-Jade-Compass-Sass-Template-WordPress-Theme",
-  "version": "0.0.2",
+  "name": "wordpress-jade-template",
+  "version": "0.0.3",
   "private": "true",
   "repository": "http://www.github.com/ajschlosser/wordpress-jade-template.git",
   "dependencies": {

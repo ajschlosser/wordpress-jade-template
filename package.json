@@ -1,8 +1,7 @@
 {
-  "name": "Blank-Gulp-Jade-Compass-Sass-Template-WordPress-Theme",
-  "version": "0.0.2",
+  "name": "wordpress-jade-template",
+  "version": "0.0.3",
   "description": "A template for WordPress ready to use with Jade, Gulp and Compass",
-  "main": "gulpfile.js",
   "repository": "http://www.github.com/ajschlosser/wordpress-jade-template.git",
   "author": "Aaron John Schlosser",
   "license": "GPL2",
